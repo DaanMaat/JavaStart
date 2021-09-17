@@ -2,5 +2,5 @@
   background (255,255,255);
   int c = 220;
   for(int i = 0; i < 5; i++){
-  ellipse(375,250,c,c);
+  ellipse(375 - c/2,250,c,c);
   c -= 20;}
