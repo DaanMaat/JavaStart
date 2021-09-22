@@ -3,3 +3,5 @@ void draw(){
   println("Gevonden");
  }
 }
+
+//nu werkte hij wel ik weet niet waarom
