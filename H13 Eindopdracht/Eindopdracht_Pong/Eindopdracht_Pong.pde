@@ -1,3 +1,10 @@
+import processing.sound.*;
+import controlP5.*;
+
+ControlP5 ui;
+
+
+
 float x = 250;
 float y = 250;
 int x1 = 210;
@@ -11,6 +18,7 @@ boolean playing = true;
 void setup(){
   size(500,500);
   frameRate(144);
+  ui = new ControlP5(this);
 }
 
 void keyPressed(){
@@ -71,5 +79,29 @@ void draw(){
   noStroke();
   rect(x1,450,80,10);
   rect(x2,50,80,10);
+  
+  if(score1 == 10){
+   fill(200,200,200);
+   noStroke();
+   rect(0,0,width,height);
+   moveX = 0;
+   moveY = 0;
+   fill(0,0,0);
+   textSize(20);
+   text("Player 1 Wins!",190,250);
+  }
+if(score2 == 10){
+   fill(200,200,200);
+   noStroke();
+   rect(0,0,width,height);
+   moveX = 0;
+   moveY = 0;
+   fill(0,0,0);
+   textSize(20);
+   text("Player 2 wins!",190,250);
 }
+}
+
+
+
 //Het pong balletje bounced niet op de rectangles
