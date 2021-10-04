@@ -11,9 +11,8 @@ int x1 = 210;
 int x2 = 210;
 int score1 = 0;
 int score2 = 0;
-float moveX = 0.3;
+float moveX = 0.5;
 float moveY = 0.7;
-boolean playing = true;
 
 void setup(){
   size(500,500);
@@ -42,26 +41,26 @@ void draw(){
   text("Player 1 = " + score1,220,20);
   text("Player 2 = " + score2,220,490);
   
-  if(x == 0 || x >= width){
-    x = x+(1*-1);
+  if(x == 0 || x == width){
+    moveX = moveX*-1;
   }
-  if(x >= x1 && (x1 + 80) >= x && y <= 60 && y >= 50){
-  moveX = moveX *-1;
-  moveY = moveY *-1;
+  if(x >= x2 && (x2 + 80) >= x && y <= 60 && y >= 50){
+  moveY = moveY *-1.1;
   }
   if(y <= 30){
   score2++;
   x = 250;
   y = 250;
+  moveY = 0.7;
   }
   if(y >= 470){
   score1++;
   x = 250;
   y = 250;
+  moveY = -0.7;
   }
-  if(x <= x2 && (x2 + 80) <= x && y <= 460 && y >= 450){
-  moveX = moveX*-1;
-  moveY = moveY*-1;
+  if(x >= x1 && x <= (x1 + 80) && y <= 460 && y >= 450){
+  moveY = moveY*-1.1;
   }
   
   x = x += moveX;
@@ -101,7 +100,3 @@ if(score2 == 10){
    text("Player 2 wins!",190,250);
 }
 }
-
-
-
-//Het pong balletje bounced niet op de rectangles
