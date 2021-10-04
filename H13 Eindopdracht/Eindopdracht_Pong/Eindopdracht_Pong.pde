@@ -62,7 +62,6 @@ void draw(){
   if(x >= x1 && x <= (x1 + 80) && y <= 460 && y >= 450){
   moveY = moveY*-1.1;
   }
-  
   x = x += moveX;
   y = y += moveY;
   
